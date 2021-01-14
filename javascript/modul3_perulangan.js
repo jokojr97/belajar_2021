@@ -22,6 +22,6 @@ while (noAngkot <= angkotBeroperasi) {
     noAngkot++;
 }
 
-// for (noAngkot = angkotBeroperasi + 1; noAngkot <= jmlAngkot; noAngkot++) {
-//     console.log('Angkot No. ' + noAngkot + ' Sedang Tidak Beroperasi.');
-// }
+for (noAngkot = angkotBeroperasi + 1; noAngkot <= jmlAngkot; noAngkot++) {
+    console.log('Angkot No. ' + noAngkot + ' Sedang Tidak Beroperasi.');
+}
