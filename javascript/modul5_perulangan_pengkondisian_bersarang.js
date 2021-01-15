@@ -61,9 +61,23 @@
 // }
 // console.log(string);
 
-// materi 6 segitiga sama kaki
+// // materi 6 segitiga sama kaki
+// var string = '';
+// var jmlbaris = 5;
+// for (var i = 1; i <= jmlbaris; i++) {
+//     for (var j = jmlbaris; j >= i; j--) {
+//         string += ' ';
+//     }
+//     for (var k = 1; k<=(2*i-1);k++) {
+//         string += '*';
+//     }
+//         string += '\n';
+// }
+// console.log(string);
+
+// materi 7 belah ketupat
 var string = '';
-var jmlbaris = 5;
+var jmlbaris = 10;
 for (var i = 1; i <= jmlbaris; i++) {
     for (var j = jmlbaris; j >= i; j--) {
         string += ' ';
@@ -72,5 +86,14 @@ for (var i = 1; i <= jmlbaris; i++) {
         string += '*';
     }
         string += '\n';
+}
+for (var l = 1; l <= jmlbaris; l++) {
+    for (var m = 1; m <= l; m++) {
+        string += ' ';
+    }
+    for (var n = jmlbaris; n>=(2*l-jmlbaris);n--) {
+        string += '*';
+    }
+    string += '\n';
 }
 console.log(string);
