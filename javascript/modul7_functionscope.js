@@ -16,12 +16,40 @@
 // console.log('b = ' + b);
 
 
-// materi 2
+// // materi 2
 // "use strict";
 
-function test() {
-    a = 2;
+// function test() {
+//     a = 2;
+// }
+
+// test();
+// console.log(a);
+
+// // Function Rekrusif/recursion
+// function reskrusif(n) {
+//     // harus ada base case atau kondisi berakhirnya function
+//     if (n === 0) return;
+//     console.log(n);
+//     reskrusif(n-1);
+// }
+
+// reskrusif(10);
+
+// Function Declaration dan Expression
+// // declaration
+// deklarasi('joko');
+// function deklarasi(nama) {
+//     console.log('hai ' + nama + '!');
+// }
+
+// deklarasi('joko');
+
+// Expression
+// // akan error jika di panggil sebelum di deklarasikan
+// expresi('joko');
+var expresi = function(nama) {
+    console.log('hai ' + nama + '!');
 }
 
-test();
-console.log(a);
+expresi('joko');
