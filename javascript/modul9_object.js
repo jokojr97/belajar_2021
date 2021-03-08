@@ -1,4 +1,5 @@
 // // object literal
+// 1. PROBLEM: tidak effektif untuk object yang banyak
 // var mhs = {
 //     nama: "Joko Riyadi",
 //     umur: 23,
@@ -55,3 +56,42 @@ function Mahasiswa(nama, nrp, email, jurusan){
 
 var mhs3 = new Mahasiswa('joko riyadi', 12343245, 'joko.riyadi97@gmail.com', 'manajemen informatika');
 var mhs4 = new Mahasiswa('riyadi joko', 3243245, 'joko.riyadi90@gmail.com', 'manajemen informatika');
+
+
+
+// object melalui object.create()
+const MethodMahasiswa = {
+    makan: function (porsi) {
+        this.energi += porsi;
+        console.log(`Halo ${this.nama}, Selamat Makan`);
+    },
+    main: function (jam) {
+        this.energi += jam;
+        console.log(`Halo ${this.nama}, Selamat Main`);
+    },
+    tidur: function (jam) {
+        this.energi += jam*2;
+        console.log(`Halo ${this.nama}, Selamat Tidur`);
+    }
+}
+
+function Mahasiswaobj(nama, energi) {    
+    // ada 2 cara
+    // 1. harus deklarasi dua kali
+    // let mahasiswa = {};
+    // mahasiswa.nama = nama;
+    // mahasiswa.energi = energi;
+    // mahasiswa.makan = MethodMahasiswa.makan;
+    // mahasiswa.main = MethodMahasiswa.main;
+    // mahasiswa.tidur = MethodMahasiswa.tidur;
+
+    // 2. menggunakan Object.create()
+    let mahasiswa = Object.create(MethodMahasiswa);
+    mahasiswa.nama = nama;
+    mahasiswa.energi = energi;
+    
+    return mahasiswa;
+}
+
+let joko = Mahasiswaobj('Joko', 10);
+let riyadi = Mahasiswaobj('Riyadi', 10);
