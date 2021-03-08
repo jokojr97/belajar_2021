@@ -2,12 +2,17 @@
 // var mhs = {
 //     nama: "Joko Riyadi",
 //     umur: 23,
+//     energi: 10,
 //     ips: [3, 3.5, 3.2, 3.4],
 //     alamat: {
 //         dusun: "kajangan",
 //         desa: "jono",
 //         kecamatan: "temayang",
 //         kabupaten: "bojonegoro"
+//     },
+//     makan: function(porsi) {
+//         this.energi = this.energi + porsi;
+//         console.log(`Halo ${this.nama}, Selamat Makan`);
 //     }
 // };
 
@@ -16,17 +21,29 @@
 // console.log("alamat desa = " + mhs.alamat.desa);
 
 // object melalui function declaration
-function BuatObjectMahasiswa(nama, nrp, email, jurusan) {
+function BuatObjectMahasiswa(nama, nrp, email, jurusan, energi) {
     var mhs= {};
     mhs.nama = nama;
     mhs.nrp = nrp;
     mhs.email = email;
     mhs.jurusan = jurusan;
+    mhs.energi = energi;
+
+    mhs.makan = function (porsi) {
+        this.energi += porsi;
+        console.log(`Halo ${this.nama}, Selamat Makan`);
+    }
+
+    mhs.main = function (jam) {
+        this.energi -= jam;
+        console.log(`Halo ${this.nama}, Selamat Main`);
+    }
+
     return mhs;
 }
 
-var mhs = BuatObjectMahasiswa('joko', 123457, 'joko.ryadi@gmail.com', 'teknik informatika');
-var mhs2 = BuatObjectMahasiswa('riyadi', 433457, 'joko.ryadi09@gmail.com', 'teknik informatika');
+var mhs = BuatObjectMahasiswa('joko', 123457, 'joko.ryadi@gmail.com', 'teknik informatika', 10);
+var mhs2 = BuatObjectMahasiswa('riyadi', 433457, 'joko.ryadi09@gmail.com', 'teknik informatika', 10);
 
 // object melalui constructor
 function Mahasiswa(nama, nrp, email, jurusan){
